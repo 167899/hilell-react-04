@@ -8,9 +8,9 @@ const Post = () => {
   const { postId } = useParams();
 
   useEffect(() => {
-    getPost(postId).then((data) => {
-      setPostBody(data.body);
-      setPostTitle(data.title);
+    getPost(postId).then(({body, title}) => {
+      setPostBody(body);
+      setPostTitle(title);
     });
   }, [postId]);
 
